@@ -6,25 +6,31 @@ const editar = require('./editar')
 const eliminar = require('./eliminar')
 const consultarut = require('./consultarut')
 
+const config = {
+    user: "postgres",
+    host: "localhost",
+    database: "alwaysmusic_db",
+    password: "1234",
+    port: 5432,
+}
+
 const programaComando = args[0]
 
 const programa = async (programa) => {
-    console.log(process.argv)
     if(programa === 'consulta'){
-    consulta(Client)
-    console.log('Registro actual: ')
+    consulta()
     }
     if(programa === 'ingreso'){
-        ingreso(Client)
+        ingreso()
     }
     if(programa === 'editar'){
-        editar(Client)
+        editar()
     }
     if(programa === 'eliminar'){
-        eliminar(Client)
+        eliminar()
     }
     if(programa === 'consultarut'){
-        consultarut(Client)
+        consultarut()
     }
 }
 programa(programaComando)
